@@ -19,7 +19,6 @@ from homeassistant.const import (
     CONF_DEVICE,
     CONF_FRIENDLY_NAME,
     CONF_VALUE_TEMPLATE,
-    DEFAULT_DB_FILENAME,
     STATE_CLOSED,
     STATE_OPEN,
 )
@@ -35,6 +34,7 @@ from .const import (
     OPEN_POSITION,
     VENTILATION_POSITION,
     INTERMEDIATE_POSITION,
+    DEFAULT_DB_FILENAME,
 )
 from .rf_device import PyBecker
 
