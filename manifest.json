@@ -3,7 +3,7 @@
   "name": "Becker",
   "documentation": "",
   "version": "0.0.1",
-  "requirements": ["git+https://github.com/damarco/pybecker.git#ds-db-path==1.0.5"],
+  "requirements": ["git+https://github.com/damarco/pybecker.git@ds-db-path#pybecker"],
   "dependencies": [],
   "codeowners": ["@nicolasberthel"]
 }
