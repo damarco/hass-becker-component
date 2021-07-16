@@ -23,13 +23,13 @@ class PyBecker:
     becker = None
 
     @classmethod
-    def setup(cls, stick_path=None):
+    def setup(cls, stick_path=None, db_path=None):
         """Initiate becker instance."""
 
         if not stick_path:
             stick_path = DEFAULT_CONF_USB_STICK_PATH
 
-        cls.becker = Becker(stick_path, True)
+        cls.becker = Becker(stick_path, True, db_path)
 
     @classmethod
     async def async_register_services(cls, hass):

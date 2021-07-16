@@ -1,6 +1,7 @@
 """Support for Becker RF covers."""
 
 import logging
+import os
 
 import voluptuous as vol
 
@@ -18,6 +19,7 @@ from homeassistant.const import (
     CONF_DEVICE,
     CONF_FRIENDLY_NAME,
     CONF_VALUE_TEMPLATE,
+    DEFAULT_DB_FILENAME,
     STATE_CLOSED,
     STATE_OPEN,
 )
@@ -72,7 +74,9 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     covers = []
 
     stick_path = config.get(CONF_DEVICE)
-    PyBecker.setup(stick_path)
+    db_path = os.path.join(hass.config.config_dir, DEFAULT_DB_FILENAME)
+
+    PyBecker.setup(stick_path, db_path)
 
     for init_call_count in range(2):
         _LOGGER.debug("Init call to cover channel 1 #%d" % init_call_count)
